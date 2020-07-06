@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "MS Word Comparison in ASP.NET";
+}
+
+<h2 class="text-info">Compare Two Word DOC/DOCX Documents</h2>
+<p class="text-info">Compare the contents of MS Word documents and get the results in DOCX or PDF format.</p>
+<br />
+<form asp-controller="Home" asp-action="UploadFiles" method="post" class="form-inline dropzone" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6" align="center"> 
+            <div class="form-group">
+                <input type="file" id="input-id" name="files" accept=".doc, .docx" class="form-control file" data-preview-file-type="text" />
+            </div>
+        </div>
+        <div class="col-md-6" align="center"> 
+            <div class="form-group">
+                <input type="file" id="input-id2" name="files" accept=".doc, .docx" class="form-control file" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12" align="center">
+            <div class="form-group">
+                <p class="text-info">
+                    <strong>Output format:</strong>
+                    <select name="outputFormat" class="form-control">
+                        <option value="DOCX">DOCX</option>
+                        <option value="PDF">PDF</option>
+                    </select>
+                </p>
+
+            </div>
+            <div class="col-md-12" align="center">
+                <div class="form-group">
+                    <button type="submit" class="form-control btn btn-success">Compare and Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script> 
+    // Drag and drop plugin options
+    $("#input-id").fileinput({ 'showUpload': false, 'previewFileType': 'any', 'showClose': false });
+    $("#input-id2").fileinput({ 'showUpload': false, 'previewFileType': 'any', 'showClose': false });
+</script>
+
